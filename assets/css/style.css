@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #3d51ff;
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
