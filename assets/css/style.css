@@ -61,8 +61,7 @@ h1 {
   .bi:active {
     scale: 0.8;
   }
-  
-  /* img*/
+
   
   .left-slider-img {
     height: 100%;
@@ -90,7 +89,9 @@ h1 {
     height: 25%;
     bottom: 0;
     z-index: 1000;
-    color: black;
-    padding: 0 1rem;
+    background-color: black;
+    color: white;
+    opacity: 0.5;
+    padding: 1rem;
     text-align: end;
   }
