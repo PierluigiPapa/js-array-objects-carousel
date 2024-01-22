@@ -1,6 +1,6 @@
 // Array di oggetti con la foto e descrizione della foto
 
-const brindisiArr = [
+const arrayBrindisi = [
     {
         image: "Brindisi_Landscape.jpg",
         titolo: "Benvenuti a Brindisi!",
@@ -16,7 +16,7 @@ const brindisiArr = [
     {
         image: "Brindisi_Monumento_al_marinaio.jpg",
         titolo: "Monumeto al marinaio",
-        descrizione: "Il monumento ha la forma di timone, alta circa 53 metri. I lavori di costruzione durarono un anno e l'inaugurazione avvenne il 4 novembre 1933, alla presenza del re Vittorio Emanuele III,",
+        descrizione: "Il monumento ha la forma di timone, alta circa 53 metri. I lavori di costruzione durarono un anno e l'inaugurazione avvenne il 4 novembre 1933, alla presenza del re Vittorio Emanuele III.",
     },
 
     {
@@ -37,3 +37,49 @@ const brindisiArr = [
         descrizione: "Gli scavi di epoca romana, rinvenuti, in occasione dei lavori del nuovo teatro Giuseppe Verdi, nel 1964",
     },
 ]
+
+// console.log(arrayBrindisi)
+
+let currentImage = 0;
+let intervalId;
+const immaginiBrindisi = arrayBrindisi.length;
+
+const carouselImageHtml = document.getElementById('image');
+const carouselTitleHtml = document.getElementById('title');
+const carouselTextHtml = document.getElementById('description');
+
+const prevHtml = document.getElementById('preview');
+const nextHtml = document.getElementById('next');
+const playHtml = document.getElementById('play');
+const stopHtml = document.getElementById('stop');
+
+const startCarousel = () => {
+    intervalId = setInterval(() => {
+        currentImage = (currentImage + 1) % immaginiBrindisi;
+        showImage(currentImage);
+    }, 3000);
+}
+
+const stopCarousel = () => {
+    clearInterval(intervalId);
+}
+
+playHtml.addEventListener('click', startCarousel);
+stopHtml.addEventListener('click', stopCarousel);
+
+const showImage = (index) => {
+    const { image, titolo, descrizione } = arrayBrindisi[index];
+    carouselImageHtml.src = image;
+    carouselTitleHtml.textContent = titolo;
+    carouselTextHtml.textContent = descrizione;
+}
+
+prevHtml.addEventListener('click', () => {
+    currentImage = (currentImage- 1 + immaginiBrindisi) % immaginiBrindisi;
+    showImage(currentImage);
+})
+
+nextHtml.addEventListener('click', () => {
+    currentImage = (currentImage + 1) % immaginiBrindisi;
+    showImage(currentImage);
+})
