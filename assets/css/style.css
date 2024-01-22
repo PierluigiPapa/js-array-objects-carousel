@@ -58,11 +58,11 @@ h1 {
     font-size: 3rem;
     color: white;
   }
+
   .bi:active {
     scale: 0.8;
   }
 
-  
   .left-slider-img {
     height: 100%;
     width: 100%;

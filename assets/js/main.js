@@ -34,6 +34,7 @@ const arrayBrindisi = [
 
 // console.log(arrayBrindisi)
 
+//Variabili per inserire gli elementi JS in HTML
 const leftSlider = document.getElementById("left-slider");
 const rightSlider = document.getElementById("right-slider");
 const infoTitle = document.getElementById("info-title");
@@ -41,8 +42,7 @@ const infoText = document.getElementById("info-text");
 infoTitle.innerHTML = arrayBrindisi[0].titolo;
 infoText.innerHTML = arrayBrindisi[0].descrizione;
 
-// slider left
-
+//Ciclo per inserire le immagini di sinistra in HTML
 for (i = 0; i < arrayBrindisi.length; i++) {
   const singleImg = document.createElement("img");
   singleImg.src = `./assets/img/${arrayBrindisi[i].image}`;
@@ -55,8 +55,8 @@ for (i = 0; i < arrayBrindisi.length; i++) {
   leftSlider.append(singleImg);
 }
 
-// slider right
 
+//Ciclo per inserire le immagini di destra in HTML
 for (i = 0; i < arrayBrindisi.length; i++) {
   const singleImg = document.createElement("img");
   singleImg.src = `./assets/img/${arrayBrindisi[i].image}`;
